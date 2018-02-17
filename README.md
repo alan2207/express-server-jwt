@@ -6,7 +6,7 @@ A simple server with JWT authentication with the ability to create new users, an
 ## Endpoints:
 * /signin - POST (email, password)
 * /signup - POST (email, password)
-* /user - GET
+* /user - GET (protected)
 
 ## Get Started:
 
