@@ -1,18 +1,15 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-const morgan = require('morgan');
-const { port, db } = require('./config');
-const router = require('./router');
+const express = require("express");
+const cors = require("cors");
+const morgan = require("morgan");
+const { port } = require("./src/config");
+const router = require("./src/router");
 
 const app = express();
-mongoose.connect(db);
 
-app.use(morgan('combined'));
+app.use(morgan("combined"));
 app.use(cors());
-app.enable('trust proxy');
-app.use(bodyParser.json({type: '*/*'}));
+app.enable("trust proxy");
+app.use(express.json({ type: "*/*" }));
 
 router(app);
 
